@@ -1,5 +1,6 @@
 var headerEl = $('header');
-var saveButton = $('#saveBtn') ; 
+var saveButton = $('.saveBtn'); 
+var hour = $('div [id^="hour"]');
 
 
 
@@ -7,14 +8,13 @@ var saveButton = $('#saveBtn') ;
 headerEl.css('text-align', 'center');
 headerEl.css('background-color', 'tan');
 
-saveButton.on('click', function() {
-  console.log('click')
-});
 
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
+
 $(function () {
+ 
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -22,8 +22,161 @@ $(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   
+  saveButton.on('click', function() {
+    var TextArea = $(this).parent().children(1).eq(1).val();
+    localStorage.setItem($(this).parent().attr('id'), (TextArea));
+    //console.log($(this).parent().children(1).eq(1));
+});
+
+  $(document).ready(function() {
+    $("div").each(function(index) {
+      if (index != 0) {
+        //console.log($(this));
+        //localStorage.getItem($(this).attr('id'));
+        //console.log(localStorage.getItem($(this).attr('id')));
+        //console.log($(this).children().eq(1));
+        var text = localStorage.getItem($(this).attr('id'));
+        $(this).children().eq(1).val(text);
+        
+        
+
+        let id = $(this).attr('id');
+        if (typeof(id) != 'undefined') {
+
+        let hourNumber = parseInt(id.substring(5));
+        //console.log(hourNumber);
+
+        var today = dayjs();
+        $('#currentDay').text(today.format('dddd, MMMM D'));
+
+        var hour = parseInt(today.format('H'));
+        console.log(today.format('H'));
+        console.log(hour);
+        console.log(hourNumber);
+        console.log(hourNumber > hour)
 
 
+        if (hourNumber > hour) {
+          ($(this).children().eq(1)).addClass('future')
+          console.log(hourNumber);
+          console.log(hour);
+          console.log($(this))
+        } else if (hourNumber < hour) {
+          ($(this).children().eq(1)).addClass('past')
+        } else if (hourNumber == hour) {
+          ($(this).children().eq(1)).addClass('present')
+        }
+
+
+
+        };
+
+      
+
+     
+
+
+      }
+
+    
+
+
+
+      
+
+      //console.log(hourNumber);
+      
+
+        
+       
+      
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //document.getElementsByClassName('.description').innerText = localStorage.getItem($(this).attr('id'));
+    
+        //document.get(attr('id'));
+       /*
+        console.log(" This " + $(this));
+        console.log($(this).children())
+        console.log(" doc " + document.getElementById('hour-9'));
+*/
+
+      
+    });
+    
+  
+  
+  
+  });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+    console.log(spTextArea);
+    console.log($(this));
+    console.log($(this).val());
+    console.log(hour);
+    console.log($(this).parent().children(1).eq(1));
+    */
+   
+   
+   
+   
+   
+    //$((this)('.description'));
+   
+ 
+   
   
   
 
