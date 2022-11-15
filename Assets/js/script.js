@@ -1,7 +1,8 @@
-// These are the global variables that will be called for the functions below. The hour variable is set so that any div that has an id attribute of 'hour' will be affected.
+
 var headerEl = $('header');
 var saveButton = $('.saveBtn'); 
 var hour = $('div [id^="hour"]');
+// These are the global variables that will be called for the functions below. The hour variable is set so that any div that has an id attribute of 'hour' will be affected.
 
 // Modified the css elements to get the header in the center of the page and give it a tan background.
 headerEl.css('text-align', 'center');
