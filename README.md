@@ -1,75 +1,31 @@
-# 05 Third-Party APIs: Work Day Scheduler
+#Work Day Scheduler
 
-## Your Task
+## Description
 
-Create a simple calendar application that allows a user to save events for each hour of the day by modifying starter code. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+In this project, I was tasked with using an existing webpage to allow entries to be saved, as well as adding in Dayjs to show the correct day and time.
 
-You'll need to use the [Day.js](https://day.js.org/en/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Day.js in the browser.
+## Table of Contents
 
-## User Story
+[Overview](#overview)
+[Screenshots](#screenshots)
+[Links](#links)
 
-```md
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+## Overview
 
-## Acceptance Criteria
-
-```md
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
-
-The following animation demonstrates the application functionality:
-
-<!-- @TODO: create ticket to review/update image) -->
-![A user clicks on slots on the color-coded calendar and edits the events.](./Assets/05-third-party-apis-homework-demo.gif)
-
-## Grading Requirements
+-For this project, I added in the ability for users to save text entries to each hourly block and save them so that the tasks would still show on the page after the page was refreshed/opened. I also added in Dayjs so that the correct date is shown at the top of the page. To do this, I seperated each hour block section by assigning them unique IDs. Using the unique IDs, I was able to store them in the local storage with the text that was entered into that section. Upon a refresh of the page, the data stored in local storage would be pulled and rendered onto the page in the same section. 
+-Each section is assigned a background color depending on the time of day. If the time is in the future, the background will be green, if the time is the same hour of the day, it will be red, and if the time is in the past, it will be grey. Dayjs was used to get the time needed to accurately show the sections as their respective colors. Dayjs was also used to show the current day that is presented at the top of the page.
 
 
+## Screenshots
 
-### Technical Acceptance Criteria: 40%
+<img src="https://github.com/JacobYaws/Work-Day-Scheduler-Project/blob/main/Work%20Day%20Scheduler.gif">
 
-* Satisfies all of the above acceptance criteria plus the following:
+## Links
 
-  * Uses a date utility library to work with date and time
+-Github link: https://github.com/JacobYaws/Work-Day-Scheduler-Project
 
+    -To download, navigate to the repository and click on the green 'Code' button. Copy the ssh link and clone it in a terminal by using 'git clone git@github.com:JacobYaws/Work-Day-Scheduler-Project.git'
 
+-Link to the live website: https://jacobyaws.github.io/Work-Day-Scheduler-Project
 
-
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate
-
-* Application user interface style is clean and polished
-
-* Application resembles the mock-up functionality provided in the Challenge instructions
-
-
-
-
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application
-
-* The URL of the GitHub repository, with a unique name and a README describing the project
-
-- - -
-© 2022 Trilogy Education Services, LLC, a 2U, Inc. brand. Confidential and Proprietary. All Rights Reserved.
+-Dayjs: https://day.js.org/en/
